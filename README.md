@@ -38,15 +38,16 @@ SGDEV=/dev/sgN python3 d2sflash.py DH16D2S_GD0C.bin go      # flash
 
 ## Dumping
 
-redumper detects the drive (DH16D2S / GD0C). Use `--rings` and skip the gap between the two areas:
+redumper does not know the drive yet, so give the settings. Use `--rings` and skip the gap between the two areas:
 
 ```
-redumper disc --drive=/dev/sgN --rings --skip=<LD lead-out + 100>-44852
+redumper disc --drive=/dev/sgN --rings --skip=<LD lead-out + 100>-44852 \
+  --drive-type=GENERIC --drive-read-offset=6 --drive-sector-order=DATA_C2_SUB --drive-pregap-start=-146
 ```
 
 - SATA: official redumper, with C2.
 - USB bridges: needs redumper with the exact READ CD length change ([superg/redumper#459](https://github.com/superg/redumper/pull/459)) and `--drive-sector-order=DATA_SUB` (no C2 over USB).
-- Manual settings for other tools: read offset +6, sector order DATA_C2_SUB, pre-gap start -146.
+- dreamdump: `--sector-order=DATA_C2_SUB --read-offset=6 --read-at-once=16`.
 
 ## Known limits
 
@@ -58,11 +59,11 @@ redumper disc --drive=/dev/sgN --rings --skip=<LD lead-out + 100>-44852
 
 Dumps matching Redump (logs in Releases):
 
-1. HP, SATA, redumper with the DH16D2S entry, no drive options: Aero Dancing i (Japan)
-2. HP, SATA, redumper b746: Aero Dancing i (Japan)
+1. HP, SATA, redumper (local build with a DH16D2S entry), no drive options: Aero Dancing i (Japan)
+2. HP, SATA, redumper b746 with the settings above: Aero Dancing i (Japan)
 3. Lite-On, USB, redumper + #459: Harusame Youbi (Japan)
 
-dreamdump 0.7.0 (`--sector-order=DATA_C2_SUB --read-offset=6 --read-at-once=16`) also matches on the HP.
+dreamdump (git 507a75b, unreleased) also matches on the HP (HD area tracks).
 
 ## Recovery
 
