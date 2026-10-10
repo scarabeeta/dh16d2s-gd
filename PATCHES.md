@@ -15,7 +15,7 @@ Bank 1: 0x14000 + (a - 0x4000). Bank 2: 0x20000 + (a - 0x4000). New code sits in
 
 ## Stock code used
 
-| Address | What |
+| Address | Function |
 |---|---|
 | bank1 0x843C | READ CD handler. CDB in IRAM 0x6E.., LBA in 0x70-0x73 |
 | bank1 0x8579 | `LCALL 0x0D0B` -> bank3 0x9697, sector status into IRAM 0x79: 01 audio, 02 data, 0x40 beyond capacity |

@@ -21,6 +21,8 @@ SHA-256 `77afdfb37426830fc796f84deee6df9d64463eb413aba78b77b19a014e2db350`
 
 0x0000-0x3FFF is filled with FF on purpose: the drive never writes this area (boot loader and per-drive data), so one file fits both drives. Do not burn it with a chip programmer.
 
+Changes against EH33: [PATCHES.md](PATCHES.md).
+
 ## Flashing (Linux)
 
 Needs Python 3 and access to the drive's `/dev/sgN` (`lsscsi -g`).
