@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 # d2sflash - firmware flasher for the Lite-On / HP DH-16D2S (MediaTek MT1309E, W25X20 flash) on Linux.
 # usage: SGDEV=/dev/sgN d2sflash.py read <out.bin>              read the whole flash (256 KiB)
 #        SGDEV=/dev/sgN d2sflash.py <image.bin>                 dry run: compare, write nothing
