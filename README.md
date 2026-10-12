@@ -36,6 +36,8 @@ SGDEV=/dev/sgN python3 d2sflash.py DH16D2S_GD0D.bin go      # flash
 ```
 
 - Coming from JA12 (or any non-EH33 firmware), add `allbanks` after `go`.
+- The image is checked against the drive's current firmware (same model string at the same place); a mismatch is refused. The current flash is saved to `d2sflash-backup-<time>.bin` before writing.
+- If a write fails, do not power-cycle the drive; run the same command again.
 - After flashing, power-cycle the drive, then run the dry run again: it should report 0 bytes differ.
 - The drive should report revision `GD0D`.
 - Lite-On Flash Utility does not work for this.
