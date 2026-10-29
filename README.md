@@ -90,7 +90,9 @@ If the drive stops booting, write your `backup.bin` back with a CH341A programme
 
 ## License
 
-`d2sflash.py` and the documentation in this repository: GPL-3.0-or-later (see `LICENSE`). The firmware image is a modified HP/Lite-On firmware and is not covered by this license.
+Copyright (C) 2026 scarabeeta
+
+`d2sflash.py`, the documentation, and the changes to the firmware (listed in [PATCHES.md](PATCHES.md)): GPL-3.0-or-later (see `LICENSE`). The rest of the firmware image belongs to its rights holders and is not covered by this license.
 
 ## Disclaimer
 
